@@ -2,24 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b806d27-0f08-433b-a2de-a6789c8daf83" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$MouseAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$MouseMotionHander.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ChessPieces.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ChessPieces.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ChineseChess.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ChineseChess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$1$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$1$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$2.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3$1$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3$1$2.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/ImagePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/LoadPage$1$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/LoadPage$1$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/LoadPage$1.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/LoadPage$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/LoadPage.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/LoadPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessOline/SocketMessage.class" afterPath="$PROJECT_DIR$/out/production/ChessOline/SocketMessage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChineseChess.java" afterPath="$PROJECT_DIR$/src/ChineseChess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImagePanel.java" afterPath="$PROJECT_DIR$/src/ImagePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoadPage.java" afterPath="$PROJECT_DIR$/src/LoadPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChessWebServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ChessWebServer/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChessWebServer/ChessWebServer.iml" afterPath="$PROJECT_DIR$/../ChessWebServer/ChessWebServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChessWebServer/src/ThreadHandler.java" afterPath="$PROJECT_DIR$/../ChessWebServer/src/ThreadHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChessWebServer/src/webServer.java" afterPath="$PROJECT_DIR$/../ChessWebServer/src/webServer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +39,8 @@
       <file leaf-file-name="ChineseChess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChineseChess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="480">
+              <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -48,8 +49,8 @@
       <file leaf-file-name="LoadPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LoadPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="108" column="52" lean-forward="true" selection-start-line="108" selection-start-column="52" selection-end-line="108" selection-end-column="52" />
+            <state relative-caret-position="517">
+              <caret line="90" column="88" lean-forward="false" selection-start-line="90" selection-start-column="80" selection-end-line="90" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -111,14 +112,16 @@
       <file leaf-file-name="ImagePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3855">
-              <caret line="280" column="74" lean-forward="false" selection-start-line="280" selection-start-column="74" selection-end-line="280" selection-end-column="74" />
+            <state relative-caret-position="367">
+              <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9399#9400#0" expanded="true" />
-                <element signature="e#9541#9542#0" expanded="true" />
-                <element signature="e#9883#9884#0" expanded="true" />
-                <element signature="e#10025#10026#0" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
+                <element signature="e#1321#1322#0" expanded="true" />
+                <element signature="e#10033#10034#0" expanded="true" />
+                <element signature="e#10175#10176#0" expanded="true" />
+                <element signature="e#10517#10518#0" expanded="true" />
+                <element signature="e#10659#10660#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/src/ChessPieces.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
-              <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+              <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -169,9 +172,9 @@
         <option value="$PROJECT_DIR$/src/SocketMessage.java" />
         <option value="$PROJECT_DIR$/src/ChessOline.java" />
         <option value="$PROJECT_DIR$/src/ChessPieces.java" />
-        <option value="$PROJECT_DIR$/src/ChineseChess.java" />
         <option value="$PROJECT_DIR$/src/LoadPage.java" />
         <option value="$PROJECT_DIR$/src/ImagePanel.java" />
+        <option value="$PROJECT_DIR$/src/ChineseChess.java" />
       </list>
     </option>
   </component>
@@ -182,8 +185,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1448" />
-    <option name="y" value="224" />
+    <option name="x" value="1689" />
+    <option name="y" value="24" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
@@ -684,16 +687,16 @@
       <workItem from="1483604766550" duration="1026000" />
       <workItem from="1483618252751" duration="390000" />
       <workItem from="1483712326212" duration="1696000" />
-      <workItem from="1483720897366" duration="11223000" />
+      <workItem from="1483720897366" duration="12953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70312000" />
+    <option name="totallyTimeSpent" value="72042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1448" y="224" width="1920" height="1053" extended-state="0" />
-    <editor active="false" />
+    <frame x="1689" y="24" width="1920" height="1053" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -704,7 +707,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21138212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21138212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -737,7 +740,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ImagePanel.java</url>
-          <line>369</line>
+          <line>384</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -757,10 +760,12 @@
           <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -811,10 +816,12 @@
           <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,10 +872,12 @@
           <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -919,10 +928,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,10 +984,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1011,10 +1024,12 @@
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1186,14 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SocketMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="120" lean-forward="false" selection-start-line="4" selection-start-column="120" selection-end-line="4" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1205,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChessPieces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessOline.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1221,32 +1220,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChessPieces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocketMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="120" lean-forward="false" selection-start-line="4" selection-start-column="120" selection-end-line="4" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LoadPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="108" column="52" lean-forward="true" selection-start-line="108" selection-start-column="52" selection-end-line="108" selection-end-column="52" />
+        <state relative-caret-position="517">
+          <caret line="90" column="88" lean-forward="false" selection-start-line="90" selection-start-column="80" selection-end-line="90" selection-end-column="88" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3855">
-          <caret line="280" column="74" lean-forward="false" selection-start-line="280" selection-start-column="74" selection-end-line="280" selection-end-column="74" />
+        <state relative-caret-position="367">
+          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9399#9400#0" expanded="true" />
-            <element signature="e#9541#9542#0" expanded="true" />
-            <element signature="e#9883#9884#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10175#10176#0" expanded="true" />
+            <element signature="e#10517#10518#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChineseChess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding />
         </state>
       </provider>

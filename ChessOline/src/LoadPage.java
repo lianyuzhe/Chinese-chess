@@ -88,6 +88,7 @@ public class LoadPage extends JFrame {
                                         chineseChess.setTitle("Chinese Chess");
                                         chineseChess.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                         chineseChess.setVisible(true);
+                                        chineseChess.detailLabel1.setText("用户："+userName);
                                     }
                                 }
                             });

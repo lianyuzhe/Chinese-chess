@@ -15,6 +15,7 @@ import java.util.Scanner;
 //棋盘的一个类
 public class ImagePanel extends JPanel {
     private Socket mySocket;
+    private ChineseChess chineseChess;
     private int order;
     private boolean myTurn;
     private Image image;
@@ -31,17 +32,25 @@ public class ImagePanel extends JPanel {
     private ChessPoint [][]chessPoint;
     private ChessPieces PiecesRed[];
     private ChessPieces PiecesBlack[];
-    public ImagePanel(Image image,Socket mySocket,int order){
+    public void addChineseChess(ChineseChess chineseChess){
+        this.chineseChess=chineseChess;
+    }
+    public ImagePanel(Image image,Socket mySocket,int order,ChineseChess chineseChess){
         super();
         this.mySocket=mySocket;
         this.order=order;
-
+        this.chineseChess=chineseChess;
         System.out.println(order);
-
         if(this.order==SocketMessage.FIRST_RED.getNumberMeaage()){
             myTurn=true;
+            chineseChess.DetailLabel3.setText("我方为红子");
+            chineseChess.DetailLabel2.setText("我方下子");
+            chineseChess.repaint();
         }else{
             myTurn=false;
+            chineseChess.DetailLabel3.setText("我方为黑子");
+            chineseChess.DetailLabel2.setText("对方下子");
+            chineseChess.repaint();
             Thread mythread=new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -92,6 +101,8 @@ public class ImagePanel extends JPanel {
                                     ImagePanel.this.repaint();
                                 }
                                 ImagePanel.this.myTurn = true;
+                                chineseChess.DetailLabel2.setText("我方下子");
+                                chineseChess.repaint();
                             }
                         });
                         change.start();
@@ -221,6 +232,8 @@ public class ImagePanel extends JPanel {
                             }
                             ImagePanel.this.repaint();
                             ImagePanel.this.myTurn=false;
+                            chineseChess.DetailLabel2.setText("对方下子");
+                            chineseChess.repaint();
                            Thread mythread=new Thread(new Runnable() {
                                @Override
                                public void run() {
@@ -295,6 +308,8 @@ public class ImagePanel extends JPanel {
                                                    ImagePanel.this.repaint();
                                                }
                                                ImagePanel.this.myTurn = true;
+                                               chineseChess.DetailLabel2.setText("我方下子");
+                                               chineseChess.repaint();
                                            }
                                        });
                                        change.start();
