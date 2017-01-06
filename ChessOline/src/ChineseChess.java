@@ -18,7 +18,7 @@ public class ChineseChess extends JFrame{
     public ChineseChess(Socket incoming,int SocketMessage){
         order=SocketMessage;
         mySocket=incoming;
-        ChessTableImage=new ImageIcon("/Users/lianyuzhe/IdeaProjects/ChessOline/Board.png").getImage();
+        ChessTableImage=new ImageIcon("/Users/lianyuzhe/IdeaProjects/Chinese chess/ChessOline/Board.png").getImage();
         setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
         setLayout(null);
         ChessTable=new ImagePanel(ChessTableImage,mySocket,order);

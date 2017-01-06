@@ -15,7 +15,7 @@ import java.util.Scanner;
     private static final String name="com.mysql.jdbc.Driver";
     private static final String user="root";
     private static final String password="637631";
-    private static final String url="jdbc:mysql://localhost:3306/parkcamerasystem?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+    private static final String url="jdbc:mysql://localhost:3306/ChineseChess?useUnicode=true&characterEncoding=utf-8&useSSL=false";
     private static Connection connection=null;
     private static PreparedStatement preparedStatement=null;
         public static void main(String[] args) throws IOException{
@@ -66,7 +66,8 @@ import java.util.Scanner;
         }
         public static int searchUser(String userName,String Password){
             try{
-                String sql="SELECT * FROM chessuser WHERE USER="+userName+";";
+                String sql="SELECT * FROM chessuser WHERE USER="+"\""+userName+"\""+";";
+                System.out.println(sql);
                 preparedStatement=connection.prepareStatement(sql);
             }catch(SQLException e){
                 e.printStackTrace();
@@ -74,7 +75,7 @@ import java.util.Scanner;
             }
             try {
                 ResultSet resultSet = preparedStatement.executeQuery();
-                if(resultSet.getRow()!=1){
+                if(!resultSet.next()){
                     return SocketMessage.NOT_HAVE_USER.getNumberMeaage();
                 }else{
                     String dataPassword=resultSet.getString("password");

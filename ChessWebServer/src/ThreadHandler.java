@@ -31,15 +31,22 @@ public class ThreadHandler implements Runnable {
                 secondOut.println(SocketMessage.MATCH.getNumberMeaage());
                 firstOut.println(SocketMessage.FIRST_RED.getNumberMeaage());
                 secondOut.println(SocketMessage.SECOND_BLACK.getNumberMeaage());
-                while(done){
+                while(!done){
+                        while (!firstIn.hasNextInt()){
+                        }
                         transportString=firstIn.nextLine();
                         secondOut.println(transportString);
+                        System.out.println("first:"+transportString);
                         if(transportString.equals("done")&&transportString.equals("win")){
                             done=true;
                             break;
                         }
+                        while (!secondIn.hasNextInt()){
+
+                        }
                         transportString=secondIn.nextLine();
                         firstOut.println(transportString);
+                        System.out.println("second:"+transportString);
                     if(transportString.equals("done")&&transportString.equals("win")){
                         done=true;
                         break;

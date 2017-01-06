@@ -35,10 +35,70 @@ public class ImagePanel extends JPanel {
         super();
         this.mySocket=mySocket;
         this.order=order;
+
+        System.out.println(order);
+
         if(this.order==SocketMessage.FIRST_RED.getNumberMeaage()){
             myTurn=true;
         }else{
             myTurn=false;
+            Thread mythread=new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Scanner mySocketIn = null;
+                    InputStream inputStream;
+                    try {
+                        OutputStream outputStream = mySocket.getOutputStream();
+                        PrintWriter printWriter = new PrintWriter(outputStream);
+                        inputStream = ImagePanel.this.mySocket.getInputStream();
+                        mySocketIn = new Scanner(inputStream);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    if (!ImagePanel.this.myTurn) {
+                        int startX, startY, endX, endY;
+                        while (!mySocketIn.hasNextInt()) {
+                        }
+                        startX = mySocketIn.nextInt();
+                        startY = mySocketIn.nextInt();
+                        endX = mySocketIn.nextInt();
+                        endY = mySocketIn.nextInt();
+                        System.out.println(startX + " " + startY + " " + endX + " " + endY);
+                        Thread change = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String name;
+                                ImagePanel.this.remove(chessPoint[startX][startY].piecesAtPoint());
+                                ChessPieces chessPieces = chessPoint[startX][startY].removePiece();
+                                if (chessPoint[endX][endY].HavePiece()) {
+                                    name = chessPoint[endX][endY].piecesAtPoint().name;
+                                    ImagePanel.this.remove(chessPoint[endX][endY].piecesAtPoint());
+                                    chessPoint[endX][endY].removePiece();
+                                    chessPoint[endX][endY].addPiece(chessPieces);
+                                    ImagePanel.this.add(chessPieces);
+                                    ImagePanel.this.repaint();
+                                    if (name.equals("将") || name.equals("帅")) {
+                                        win = true;
+                                        if (name.equals("将")) {
+                                            JOptionPane.showMessageDialog(ImagePanel.this, "红方胜利");
+                                        } else {
+                                            JOptionPane.showMessageDialog(ImagePanel.this, "黑方胜利");
+                                        }
+                                    }
+                                } else {
+                                    chessPoint[endX][endY].addPiece(chessPieces);
+                                    ImagePanel.this.add(chessPieces);
+                                    ImagePanel.this.repaint();
+                                }
+                                ImagePanel.this.myTurn = true;
+                            }
+                        });
+                        change.start();
+                    }
+                }
+            });
+            mythread.start();
         }
         win=false;
         WhichStep=true;
@@ -95,56 +155,6 @@ public class ImagePanel extends JPanel {
                 }
             }
         }
-        Thread mythread=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Scanner mySocketIn;
-                InputStream inputStream;
-                PrintWriter printWriter;
-                OutputStream outputStream;
-                try {
-                    inputStream = mySocket.getInputStream();
-                    mySocketIn=new Scanner(inputStream);
-                    outputStream=mySocket.getOutputStream();
-                    printWriter=new PrintWriter(outputStream);
-                }catch (Exception e){
-                    return;
-                }
-                while(true){
-                    if(!myTurn){
-                        String name;
-                        int startX,startY,endX,endY;
-                        startX=mySocketIn.nextInt();
-                        startY=mySocketIn.nextInt();
-                        endX=mySocketIn.nextInt();
-                        endY=mySocketIn.nextInt();
-                        ImagePanel.this.remove(chessPoint[startX][startY].piecesAtPoint());
-                        ChessPieces chessPieces=chessPoint[startX][startY].removePiece();
-                        if(chessPoint[endX][endY].HavePiece()){
-                            name=chessPoint[endX][endY].piecesAtPoint().name;
-                            ImagePanel.this.remove(chessPoint[endX][endY].piecesAtPoint());
-                            chessPoint[endX][endY].removePiece();
-                            chessPoint[endX][endY].addPiece(chessPieces);
-                            ImagePanel.this.add(chessPieces);
-                            ImagePanel.this.repaint();
-                            if(name.equals("将")||name.equals("帅")){
-                                win=true;
-                                if(name.equals("将")){
-                                    JOptionPane.showMessageDialog(ImagePanel.this,"红方胜利");
-                                }else{
-                                    JOptionPane.showMessageDialog(ImagePanel.this,"黑方胜利");
-                                }
-                            }
-                        }else{
-                            chessPoint[endX][endY].addPiece(chessPieces);
-                            ImagePanel.this.add(chessPieces);
-                            ImagePanel.this.repaint();
-                        }
-                        ImagePanel.this.myTurn=true;
-                    }
-                }
-            }
-        });
         this.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -171,9 +181,11 @@ public class ImagePanel extends JPanel {
                     }
                 }
                 if(row!=-1&&cloumn!=-1){
-                    if((chessPoint[selectRow][selectColumn].piecesAtPoint().type==true&&order==SocketMessage.SECOND_BLACK.getNumberMeaage())||
-                            (chessPoint[selectRow][selectColumn].piecesAtPoint().type==false&&order==SocketMessage.FIRST_RED.getNumberMeaage())){
-                        return;
+                    if(!isSelected&&chessPoint[row][cloumn].HavePiece()) {
+                        if ((chessPoint[row][cloumn].piecesAtPoint().type == true && order == SocketMessage.SECOND_BLACK.getNumberMeaage()) ||
+                                (chessPoint[row][cloumn].piecesAtPoint().type == false && order == SocketMessage.FIRST_RED.getNumberMeaage())) {
+                            return;
+                        }
                     }
                     if(isSelected){
                        boolean move=moveable(chessPoint[selectRow][selectColumn].piecesAtPoint(),selectRow,selectColumn,row,cloumn);
@@ -186,23 +198,126 @@ public class ImagePanel extends JPanel {
                                 chessPoint[row][cloumn].removePiece();
                                 chessPoint[row][cloumn].addPiece(chessPieces);
                                 ImagePanel.this.add(chessPieces);
-                                if(name.equals("将")||name.equals("帅")){
-                                    win=true;
-                                    if(name.equals("将")){
-                                        JOptionPane.showMessageDialog(ImagePanel.this,"红方胜利");
-                                    }else{
-                                        JOptionPane.showMessageDialog(ImagePanel.this,"黑方胜利");
-                                    }
+                                if (name.equals("将")) {
+                                    Thread thread=new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            JOptionPane.showMessageDialog(ImagePanel.this, "红方胜利");
+                                        }
+                                    });
+                                    thread.start();
+                                } else if (name.equals("将")){
+                                    Thread thread=new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            JOptionPane.showMessageDialog(ImagePanel.this, "黑方胜利");
+                                        }
+                                    });
+                                    thread.start();
                                 }
                             }else{
                                 chessPoint[row][cloumn].addPiece(chessPieces);
                                 ImagePanel.this.add(chessPieces);
                             }
                             ImagePanel.this.repaint();
-                            myTurn=false;
+                            ImagePanel.this.myTurn=false;
+                           Thread mythread=new Thread(new Runnable() {
+                               @Override
+                               public void run() {
+                                   Scanner mySocketIn=null;
+                                   InputStream inputStream;
+                                   try {
+                                       OutputStream outputStream=mySocket.getOutputStream();
+                                       PrintWriter printWriter=new PrintWriter(outputStream);
+                                       inputStream =ImagePanel.this.mySocket.getInputStream();
+                                       mySocketIn=new Scanner(inputStream);
+
+                                   }catch (Exception e){
+                                       e.printStackTrace();
+                                   }
+                                   if(!ImagePanel.this.myTurn) {
+                                       int startX, startY, endX, endY;
+                                       while (!mySocketIn.hasNextInt()) {
+                                       }
+                                       startX = mySocketIn.nextInt();
+                                       startY = mySocketIn.nextInt();
+                                       endX = mySocketIn.nextInt();
+                                       endY = mySocketIn.nextInt();
+                                       System.out.println(startX + " " + startY + " " + endX + " " + endY);
+                                       Thread change = new Thread(new Runnable() {
+                                           @Override
+                                           public void run() {
+                                               String name;
+                                               PrintWriter printWriter=null;
+                                               try {
+                                                   OutputStream outputStream = mySocket.getOutputStream();
+                                                   printWriter = new PrintWriter(outputStream);
+                                               }catch (Exception e1){
+                                                   e1.printStackTrace();
+                                               }
+                                               ImagePanel.this.remove(chessPoint[startX][startY].piecesAtPoint());
+                                               ChessPieces chessPieces = chessPoint[startX][startY].removePiece();
+                                               if (chessPoint[endX][endY].HavePiece()) {
+                                                   name = chessPoint[endX][endY].piecesAtPoint().name;
+                                                   ImagePanel.this.remove(chessPoint[endX][endY].piecesAtPoint());
+                                                   chessPoint[endX][endY].removePiece();
+                                                   chessPoint[endX][endY].addPiece(chessPieces);
+                                                   ImagePanel.this.add(chessPieces);
+                                                   ImagePanel.this.repaint();
+                                                   if (name.equals("将") || name.equals("帅")) {
+                                                       win = true;
+                                                       try {
+                                                           printWriter.println("win");
+                                                       }catch (Exception except){
+                                                           except.printStackTrace();
+                                                       }
+                                                       if (name.equals("将")) {
+                                                           Thread thread=new Thread(new Runnable() {
+                                                               @Override
+                                                               public void run() {
+                                                                   JOptionPane.showMessageDialog(ImagePanel.this, "红方胜利");
+                                                               }
+                                                           });
+                                                           thread.start();
+                                                       } else {
+                                                           Thread thread=new Thread(new Runnable() {
+                                                               @Override
+                                                               public void run() {
+                                                                   JOptionPane.showMessageDialog(ImagePanel.this, "黑方胜利");
+                                                               }
+                                                           });
+                                                           thread.start();
+                                                       }
+                                                   }
+                                               } else {
+                                                   chessPoint[endX][endY].addPiece(chessPieces);
+                                                   ImagePanel.this.add(chessPieces);
+                                                   ImagePanel.this.repaint();
+                                               }
+                                               ImagePanel.this.myTurn = true;
+                                           }
+                                       });
+                                       change.start();
+                                   }
+                               }
+                           });
+                           mythread.start();
+                           PrintWriter printWriter;
+                           try {
+                                OutputStream outputStream = ImagePanel.this.mySocket.getOutputStream();
+                                printWriter=new PrintWriter(outputStream,true);
+                               printWriter.println(selectRow+" "+selectColumn+" "+row+" "+cloumn);
+                            }catch (Exception e1) {
+                               e1.printStackTrace();
+                           }
                        }
                        isSelected=false;
-                       chessPoint[selectRow][selectColumn].piecesAtPoint().backcolor=Color.BLACK;
+                       if(!move) {
+                           chessPoint[selectRow][selectColumn].piecesAtPoint().backcolor = Color.BLACK;
+                       }else{
+                           chessPoint[row][cloumn].piecesAtPoint().backcolor = Color.BLACK;
+                       }
+                       ImagePanel.this.repaint();
                     }else if(chessPoint[row][cloumn].HavePiece()){
                         isSelected=true;
                         selectRow=row;
@@ -211,6 +326,7 @@ public class ImagePanel extends JPanel {
                 }
                 if(isSelected){
                     chessPoint[selectRow][selectColumn].piecesAtPoint().backcolor=Color.RED;
+                    ImagePanel.this.repaint();
                 }
             }
 
@@ -263,7 +379,7 @@ public class ImagePanel extends JPanel {
                 }
             }else if(startY==endY&&startX!=endX){
                 for(int i=minX+1;i<maxX;i++){
-                    if(chessPoint[i][startX].HavePiece()){
+                    if(chessPoint[i][startY].HavePiece()){
                         canMove=false;
                         break;
                     }
@@ -378,7 +494,7 @@ public class ImagePanel extends JPanel {
                 canMove=false;
             }
         }else if(pieces.name.equals("卒")){
-            if((startX==endX&&endY-startY==1)||(endY==startY&&Math.abs(startX-endX)==1)){
+            if((startX==endX&&endY-startY==1)||((endY==startY&&Math.abs(startX-endX)==1)&&endY>=5)){
                 if(chessPoint[endX][endY].HavePiece()&&chessPoint[endX][endY].piecesAtPoint().type==pieces.type){
                     canMove=false;
                 }
@@ -386,7 +502,7 @@ public class ImagePanel extends JPanel {
                 canMove=false;
             }
         }else if(pieces.name.equals("兵")){
-            if(startX==endX&&endY-startY==-1||(endY==startY&&Math.abs(startX-endX)==1)){
+            if(startX==endX&&endY-startY==-1||((endY==startY&&Math.abs(startX-endX)==1)&&endY<=4)){
                 if(chessPoint[endX][endY].HavePiece()&&chessPoint[endX][endY].piecesAtPoint().type==pieces.type){
                     canMove=false;
                 }
@@ -396,24 +512,24 @@ public class ImagePanel extends JPanel {
         }
         return canMove;
     }
-    private class MouseAction extends MouseAdapter {
-        private int x,y;
-        public MouseAction(){
-            x=0;
-            y=0;
-        }
-        @Override
-        public void mouseClicked(MouseEvent event){
-            Point point=event.getLocationOnScreen();
-            x=point.x;
-            y=point.y;
-            System.out.println("x= "+x+",y= "+y);
-        }
-    }
-    private class MouseMotionHander extends MouseMotionAdapter{
-        public void mouseDragged(MouseEvent event){
-            super.mouseDragged(event);
-            System.out.println("JPanel's X= "+event.getX()+",Y= "+event.getY());
-        }
-    }
+//    private class MouseAction extends MouseAdapter {
+//        private int x,y;
+//        public MouseAction(){
+//            x=0;
+//            y=0;
+//        }
+//        @Override
+//        public void mouseClicked(MouseEvent event){
+//            Point point=event.getLocationOnScreen();
+//            x=point.x;
+//            y=point.y;
+//            System.out.println("x= "+x+",y= "+y);
+//        }
+//    }
+//    private class MouseMotionHander extends MouseMotionAdapter{
+//        public void mouseDragged(MouseEvent event){
+//            super.mouseDragged(event);
+//            System.out.println("JPanel's X= "+event.getX()+",Y= "+event.getY());
+//        }
+//    }
 }

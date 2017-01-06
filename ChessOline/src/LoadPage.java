@@ -13,7 +13,7 @@ import java.util.Scanner;
  * Created by lianyuzhe on 2017/1/4.
  */
 public class LoadPage extends JFrame {
-    private static  final String host="192.168.1.211";
+    private static  final String host="192.168.31.211";
     private static final int port=10000;
     private static final int DEFAULT_HEIGHT=200;
     private static final int DEFAULT_WIDTH=400;
@@ -61,7 +61,7 @@ public class LoadPage extends JFrame {
                         Scanner scanner=new Scanner(inputStream);
                         int returnNumber=scanner.nextInt();
                         if(returnNumber==SocketMessage.SUCCESS.getNumberMeaage()){
-                            LoadPage.this.setVisible(false);
+                            LoadPage.this.setVisible(true);
                             String key;
                             do {
                                 key = JOptionPane.showInputDialog(LoadPage.this, "请输入对战匹配号", "匹配号填写", JOptionPane.QUESTION_MESSAGE);
@@ -77,14 +77,21 @@ public class LoadPage extends JFrame {
                             waitJlabel.setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
                             LoadPage.this.add(waitJlabel);
                             LoadPage.this.repaint();
-                            int messageSocket=scanner.nextInt();
-                            if(messageSocket==SocketMessage.MATCH.getNumberMeaage()){
-                                messageSocket=scanner.nextInt();
-                                ChineseChess chineseChess=new ChineseChess(mySocket,messageSocket);
-                                chineseChess.setTitle("Chinese Chess");
-                                chineseChess.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                chineseChess.setVisible(true);
-                            }
+                            Thread thread=new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    int messageSocket=scanner.nextInt();
+                                    if(messageSocket==SocketMessage.MATCH.getNumberMeaage()){
+                                        LoadPage.this.setVisible(false);
+                                        messageSocket=scanner.nextInt();
+                                        ChineseChess chineseChess=new ChineseChess(mySocket,messageSocket);
+                                        chineseChess.setTitle("Chinese Chess");
+                                        chineseChess.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                        chineseChess.setVisible(true);
+                                    }
+                                }
+                            });
+                            thread.start();
                         }else {
                             if(returnNumber==SocketMessage.NOT_HAVE_USER.getNumberMeaage()){
                                 JOptionPane.showMessageDialog(LoadPage.this, "无此用户名", "中国象棋登入界面", JOptionPane.ERROR_MESSAGE, null);
